@@ -15,6 +15,7 @@
 		4512A9EC1CE27D770000D3A1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512A9EB1CE27D770000D3A1 /* SearchViewController.swift */; };
 		4512A9EE1CE27E8C0000D3A1 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512A9ED1CE27E8C0000D3A1 /* SearchResultViewController.swift */; };
 		4512A9F11CE27FDA0000D3A1 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512A9F01CE27FDA0000D3A1 /* Business.swift */; };
+		4512A9F31CE2814E0000D3A1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512A9F21CE2814E0000D3A1 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4512A9EB1CE27D770000D3A1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4512A9ED1CE27E8C0000D3A1 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		4512A9F01CE27FDA0000D3A1 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		4512A9F21CE2814E0000D3A1 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				4512A9F01CE27FDA0000D3A1 /* Business.swift */,
+				4512A9F21CE2814E0000D3A1 /* Location.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				4512A9DB1CE27D2E0000D3A1 /* ViewController.swift in Sources */,
 				4512A9EE1CE27E8C0000D3A1 /* SearchResultViewController.swift in Sources */,
 				4512A9F11CE27FDA0000D3A1 /* Business.swift in Sources */,
+				4512A9F31CE2814E0000D3A1 /* Location.swift in Sources */,
 				4512A9D91CE27D2E0000D3A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
