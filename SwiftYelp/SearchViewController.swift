@@ -23,6 +23,9 @@ class SearchViewController: UIViewController {
         }
     }
     
+    @IBAction func submitSearch(sender: UIButton) {
+    }
+    
     func showResultsPage() {
         self.performSegueWithIdentifier("search", sender: self)
     }
