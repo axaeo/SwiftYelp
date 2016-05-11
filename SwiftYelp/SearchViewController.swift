@@ -28,7 +28,14 @@ class SearchViewController: UIViewController {
             .yelpCommunicator!.searchWithTerm("Ethiopian",
                                                 location: "Toronto",
                                                 callback: {(data, error) in
-                                                    //TODO: Something
+                                                    if (data != nil) {
+                                                        self.businessSearchResults = data
+                                                        dispatch_async(dispatch_get_main_queue(),{
+                                                            self.showResultsPage()
+                                                        })
+                                                    } else {
+                                                        //TODO show error message
+                                                    }
                                                 })
         
     }
