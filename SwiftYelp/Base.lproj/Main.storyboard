@@ -37,41 +37,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for something!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDA-EJ-WVJ">
-                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for something!" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="xDA-EJ-WVJ">
+                                <rect key="frame" x="20" y="347" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ofW-Sx-7bo"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftYelp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpE-83-FdM">
-                                <rect key="frame" x="20" y="224" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbB-Cv-4GT">
-                                <rect key="frame" x="40" y="335" width="520" height="30"/>
-                                <state key="normal" title="Search"/>
+                                <rect key="frame" x="20" y="397" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.71372549019607845" green="0.2196078431372549" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="submitSearch:" destination="cqS-aW-p0Q" eventType="touchUpInside" id="yba-pr-DJT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yelp" translatesAutoresizingMaskIntoConstraints="NO" id="FuN-5d-NtT">
+                                <rect key="frame" x="60" y="133" width="480" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FuN-5d-NtT" secondAttribute="height" multiplier="15:8" id="HrG-JL-4h3"/>
+                                    <constraint firstAttribute="width" secondItem="FuN-5d-NtT" secondAttribute="height" multiplier="139:62" id="RTU-yv-cLw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HrG-JL-4h3"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dpE-83-FdM" firstAttribute="leading" secondItem="Ugu-5i-Yes" secondAttribute="leadingMargin" id="3s6-Ej-H0L"/>
-                            <constraint firstItem="xDA-EJ-WVJ" firstAttribute="top" secondItem="dpE-83-FdM" secondAttribute="bottom" constant="40" id="AZF-LC-pdv"/>
+                            <constraint firstItem="FuN-5d-NtT" firstAttribute="top" secondItem="qpM-hQ-H4h" secondAttribute="bottom" constant="20" id="7Y5-MO-aAA"/>
+                            <constraint firstItem="xDA-EJ-WVJ" firstAttribute="top" secondItem="FuN-5d-NtT" secondAttribute="bottom" id="D6R-LQ-7eE"/>
                             <constraint firstItem="xDA-EJ-WVJ" firstAttribute="centerY" secondItem="Ugu-5i-Yes" secondAttribute="centerY" id="EMb-HK-RX0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jbB-Cv-4GT" secondAttribute="trailing" constant="20" id="hHY-2m-uuz"/>
+                            <constraint firstItem="FuN-5d-NtT" firstAttribute="centerY" secondItem="Ugu-5i-Yes" secondAttribute="centerY" constant="-60" id="RT8-wj-PjO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jbB-Cv-4GT" secondAttribute="trailing" id="hHY-2m-uuz"/>
                             <constraint firstItem="jbB-Cv-4GT" firstAttribute="centerX" secondItem="Ugu-5i-Yes" secondAttribute="centerX" id="iU3-gI-zAa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FuN-5d-NtT" secondAttribute="trailing" constant="40" id="iXr-dd-rd0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xDA-EJ-WVJ" secondAttribute="trailing" id="jvT-L9-yNX"/>
                             <constraint firstItem="xDA-EJ-WVJ" firstAttribute="leading" secondItem="Ugu-5i-Yes" secondAttribute="leadingMargin" id="lXl-uQ-Suc"/>
-                            <constraint firstItem="jbB-Cv-4GT" firstAttribute="leading" secondItem="Ugu-5i-Yes" secondAttribute="leadingMargin" constant="20" id="nAq-Mv-KLm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dpE-83-FdM" secondAttribute="trailing" id="t9G-i2-iJ1"/>
+                            <constraint firstItem="jbB-Cv-4GT" firstAttribute="leading" secondItem="Ugu-5i-Yes" secondAttribute="leadingMargin" id="nAq-Mv-KLm"/>
                             <constraint firstItem="jbB-Cv-4GT" firstAttribute="centerY" secondItem="Ugu-5i-Yes" secondAttribute="centerY" id="tNL-F4-QnR"/>
                             <constraint firstItem="jbB-Cv-4GT" firstAttribute="top" secondItem="xDA-EJ-WVJ" secondAttribute="bottom" constant="20" id="u4c-95-2nC"/>
+                            <constraint firstItem="FuN-5d-NtT" firstAttribute="leading" secondItem="Ugu-5i-Yes" secondAttribute="leadingMargin" constant="40" id="veM-2O-awt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="7Y5-MO-aAA"/>
+                                <exclude reference="EMb-HK-RX0"/>
                                 <exclude reference="iU3-gI-zAa"/>
                                 <exclude reference="tNL-F4-QnR"/>
                             </mask>
@@ -258,6 +274,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Yelp" width="834" height="372"/>
         <image name="triangle" width="1000" height="866"/>
     </resources>
 </document>

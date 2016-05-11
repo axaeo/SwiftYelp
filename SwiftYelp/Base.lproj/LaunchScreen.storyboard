@@ -16,7 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yelp Splash" translatesAutoresizingMaskIntoConstraints="NO" id="R3S-PF-crL">
+                                <rect key="frame" x="229" y="240" width="143" height="121"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intelliware Development 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ms5-YB-7V9">
+                                <rect key="frame" x="217" y="565" width="167" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ms5-YB-7V9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="108-fR-TKv"/>
+                            <constraint firstItem="R3S-PF-crL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="KYq-NB-Sky"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Ms5-YB-7V9" secondAttribute="bottom" constant="20" id="cen-dP-2sC"/>
+                            <constraint firstItem="Ms5-YB-7V9" firstAttribute="top" secondItem="R3S-PF-crL" secondAttribute="bottom" constant="-1" id="nZO-Pm-F8P"/>
+                            <constraint firstItem="R3S-PF-crL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yV7-gh-z5n"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nZO-Pm-F8P"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +47,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Yelp Splash" width="143" height="121"/>
+    </resources>
 </document>

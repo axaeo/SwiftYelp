@@ -16,7 +16,15 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchField: UITextField!
     
+    override func viewDidLoad() {
+        self.searchField.layer.borderWidth = 2;
+        self.searchField.layer.cornerRadius = 3;
+        self.searchField.layer.masksToBounds = true;
+        self.searchField.layer.borderColor = UIColor(colorLiteralRed: 182/255, green: 56/255, blue: 34/255, alpha: 1).CGColor
+    }
+    
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false);
     }
 
