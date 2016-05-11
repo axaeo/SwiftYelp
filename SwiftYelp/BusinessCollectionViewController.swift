@@ -12,7 +12,7 @@ private let cellReuseIdentifier = "BusinessCollectionViewCell"
 private let headerReuseIdentifier = "searchHeader"
 private let detailSegueID:String = "detail"
 
-class BusinessCollectionViewController: UICollectionViewController {
+class BusinessCollectionViewController: UICollectionViewController, BusinessCollectionHeaderViewDelegate {
 
     var businessSearchResults: Array<Business>?
     var searchedTerm: String?
@@ -53,9 +53,22 @@ class BusinessCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-            let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, forIndexPath: indexPath) as! BusinessCollectionHeaderView
-            header.label.text = String(format: "Searched for: %@", searchedTerm!)
-            return header;
+        let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, forIndexPath: indexPath) as! BusinessCollectionHeaderView
+        header.label.text = String(format: "Searched for: %@", searchedTerm!)
+        header.delegate = self;
+        
+        let gesture = UITapGestureRecognizer(target: header, action: #selector(BusinessCollectionHeaderView.onTap))
+        gesture.delaysTouchesBegan = true;
+        gesture.numberOfTapsRequired = 1;
+        header.addGestureRecognizer(gesture)
+        
+        return header;
+    }
+    
+    func didTapHeader(sender: BusinessCollectionHeaderView) {
+        self.businessSearchResults = self.businessSearchResults?.reverse()
+        self.collectionView?.reloadData()
+        sender.imageView.transform = CGAffineTransformConcat(sender.imageView.transform, CGAffineTransformMakeScale(1, -1));
     }
     
     func businessForIndexPath(indexPath: NSIndexPath) -> Business {

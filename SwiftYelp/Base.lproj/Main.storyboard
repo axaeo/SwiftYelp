@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -155,20 +156,36 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searched For: ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93o-MZ-mJp">
-                                    <rect key="frame" x="18" y="14" width="564" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searched For: ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93o-MZ-mJp">
+                                    <rect key="frame" x="8" y="14" width="539" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle" translatesAutoresizingMaskIntoConstraints="NO" id="WDP-45-RF0">
+                                    <rect key="frame" x="557" y="13" width="25" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="C24-Of-Ici"/>
+                                        <constraint firstAttribute="width" secondItem="WDP-45-RF0" secondAttribute="height" multiplier="1:1" id="OhK-PL-7Vt"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="8eE-G4-csU" secondAttribute="leadingMargin" constant="10" id="8NO-vT-FrP"/>
+                                <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="8eE-G4-csU" secondAttribute="leadingMargin" id="8NO-vT-FrP"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="93o-MZ-mJp" secondAttribute="trailing" constant="10" id="RVq-pn-pAV"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="WDP-45-RF0" secondAttribute="trailing" constant="10" id="UVb-va-Ug6"/>
+                                <constraint firstItem="WDP-45-RF0" firstAttribute="leading" secondItem="93o-MZ-mJp" secondAttribute="trailing" constant="10" id="WxH-XF-F7b"/>
                                 <constraint firstItem="93o-MZ-mJp" firstAttribute="centerY" secondItem="8eE-G4-csU" secondAttribute="centerY" id="Z1C-8q-RbW"/>
+                                <constraint firstItem="WDP-45-RF0" firstAttribute="centerY" secondItem="8eE-G4-csU" secondAttribute="centerY" id="dtD-Zs-jM3"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="RVq-pn-pAV"/>
+                                </mask>
+                            </variation>
                             <connections>
+                                <outlet property="imageView" destination="WDP-45-RF0" id="ZKy-Kq-0Qk"/>
                                 <outlet property="label" destination="93o-MZ-mJp" id="UQf-Bg-din"/>
                             </connections>
                         </collectionReusableView>
@@ -228,4 +245,7 @@
             <point key="canvasLocation" x="2000" y="-407"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="triangle" width="1000" height="866"/>
+    </resources>
 </document>

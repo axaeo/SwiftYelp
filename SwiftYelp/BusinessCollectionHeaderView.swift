@@ -8,7 +8,17 @@
 
 import UIKit
 
-class BusinessCollectionHeaderView: UICollectionReusableView {
-    @IBOutlet weak var label: UILabel!
+protocol BusinessCollectionHeaderViewDelegate: class {
+    func didTapHeader(sender: BusinessCollectionHeaderView)
+}
 
+class BusinessCollectionHeaderView: UICollectionReusableView {
+    var delegate:BusinessCollectionHeaderViewDelegate?
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    func onTap() {
+        delegate!.didTapHeader(self)
+        
+    }
 }
