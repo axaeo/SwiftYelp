@@ -27,7 +27,8 @@ class YelpCommunicator {
             "https://api.yelp.com/v2/search",
             parameters: [
                 "term" : term,
-                "location" : location
+                "location" : location,
+                "limit" : 10
             ],
             success: { (data, response) in
                 do {
