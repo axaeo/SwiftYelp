@@ -94,7 +94,6 @@
 				4512A9EB1CE27D770000D3A1 /* SearchViewController.swift */,
 				451A668B1CE3957200F0E811 /* BusinessViewController.swift */,
 				451A668D1CE39E1700F0E811 /* BusinessCollectionViewController.swift */,
-				451A668F1CE39E7900F0E811 /* BusinessCollectionViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -120,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				451A66921CE3BDE300F0E811 /* BusinessCollectionHeaderView.swift */,
+				451A668F1CE39E7900F0E811 /* BusinessCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
