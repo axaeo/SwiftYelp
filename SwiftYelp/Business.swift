@@ -41,7 +41,7 @@ class Business {
     class func fromJson(json: Dictionary<String, AnyObject>) -> Business {
         let result = Business()
         
-        result.serverId = json["server_id"] as? String
+        result.serverId = json["id"] as? String
         
         return result;
     }

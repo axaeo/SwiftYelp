@@ -24,6 +24,13 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func submitSearch(sender: UIButton) {
+        AppDelegate.instance()
+            .yelpCommunicator!.searchWithTerm("Ethiopian",
+                                                location: "Toronto",
+                                                callback: {(data, error) in
+                                                    //TODO: Something
+                                                })
+        
     }
     
     func showResultsPage() {
