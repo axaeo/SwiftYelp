@@ -24,6 +24,7 @@ class SearchViewController: UIViewController {
         if segue.identifier == searchSegueID {
             let searchResultVC:BusinessCollectionViewController = segue.destinationViewController as! BusinessCollectionViewController
             searchResultVC.businessSearchResults = self.businessSearchResults;
+            searchResultVC.searchedTerm = self.searchFieldContents()
         }
     }
     
@@ -32,8 +33,16 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func submitSearch(sender: UIButton) {
+        
+        let searchTerm = self.searchFieldContents()
+        
+        if searchTerm!.isEmpty {
+            //TODO show error
+            return
+        }
+        
         AppDelegate.instance()
-            .yelpCommunicator!.searchWithTerm("Ethiopian",
+            .yelpCommunicator!.searchWithTerm(searchTerm!,
                                                 location: "Toronto",
                                                 callback: {(data, error) in
                                                     if (data != nil) {
@@ -46,6 +55,11 @@ class SearchViewController: UIViewController {
                                                     }
                                                 })
         
+    }
+    
+    func searchFieldContents() -> String? {
+        let searchString = self.searchField.text
+        return searchString!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     }
 
 }

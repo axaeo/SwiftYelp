@@ -15,6 +15,7 @@ private let detailSegueID:String = "detail"
 class BusinessCollectionViewController: UICollectionViewController {
 
     var businessSearchResults: Array<Business>?
+    var searchedTerm: String?
     var selectedIndexPath: NSIndexPath?
     
     override func viewDidLoad() {
@@ -53,7 +54,7 @@ class BusinessCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
             let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, forIndexPath: indexPath) as! BusinessCollectionHeaderView
-            header.label.text = String(format: "Searched for: %@", "Ethiopian")
+            header.label.text = String(format: "Searched for: %@", searchedTerm!)
             return header;
     }
     
