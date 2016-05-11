@@ -46,5 +46,20 @@ class YelpCommunicator {
             }
         )
     }
+    
+    func downloadDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            completion(data: data, response: response, error: error)
+            }.resume()
+    }
+    
+    func downloadImageFromURL(urlString: String, callback: ((image: UIImage?, error: NSError?) -> Void)){
+        self.downloadDataFromUrl(NSURL(string: urlString)!) { (data, response, error)  in
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                guard let data = data where error == nil else { return }
+                callback(image: UIImage(data: data), error: error)
+            }
+        }
+    }
 
 }

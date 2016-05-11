@@ -21,10 +21,8 @@ class Business {
     var closed: Bool?
     
     var mobileUrl: String?
-    var imageUrl: String?
-    var ratingImageUrl: String?
-    var ratingImageLargeUrl: String?
-    var snippetImageUrl: String?
+    var image: UIImage?
+    var ratingImage: UIImage?
     
     var categories: Array<String>?
     var location: Location?
@@ -50,10 +48,19 @@ class Business {
         result.snippetText = json["snippet_text"] as? String
         
         result.mobileUrl = json["mobile_url"] as? String
-        result.imageUrl = json["image_url"] as? String
-        result.ratingImageUrl = json["rating_img_url"] as? String
-        result.ratingImageLargeUrl = json["rating_img_url_large"] as? String
-        result.snippetImageUrl = json["snippet_image_url"] as? String
+        
+        let yelpCommunicator = AppDelegate.instance().yelpCommunicator!
+        yelpCommunicator.downloadImageFromURL((json["image_url"] as? String)!, callback: {(image, error) in
+            if (image != nil) {
+                result.image = image;
+            }
+        })
+        
+        yelpCommunicator.downloadImageFromURL((json["image_url"] as? String)!, callback: {(image, error) in
+            if (image != nil) {
+                result.ratingImage = image;
+            }
+        })
         
         result.claimed = json["is_claimed"] as? Bool
         result.closed = json["is_closed"] as? Bool
