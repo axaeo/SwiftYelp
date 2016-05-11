@@ -11,6 +11,7 @@ import UIKit
 class SearchResultViewController: UITableViewController {
 
     var businessSearchResults: Array<Business>?
+    var selectedIndexPath: NSIndexPath?
     
     override func viewDidLoad() {
         self.tableView.delegate = self;
@@ -37,6 +38,18 @@ class SearchResultViewController: UITableViewController {
         cell.textLabel?.text = business.name
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedIndexPath = indexPath;
+        performSegueWithIdentifier("detail", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "detail") {
+            let destination:BusinessViewController = segue.destinationViewController as! BusinessViewController
+            destination.business = self.businessForIndexPath(self.selectedIndexPath!)
+        }
     }
     
     func businessForIndexPath(indexPath: NSIndexPath) -> Business {

@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -89,10 +90,54 @@
                         </connections>
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <segue destination="Xf8-ee-Qqo" kind="show" identifier="detail" id="hCQ-Tc-ocO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heP-FX-BRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1260" y="-407"/>
+        </scene>
+        <!--Business-->
+        <scene sceneID="yy0-Ve-vPn">
+            <objects>
+                <viewController title="Business" id="Xf8-ee-Qqo" customClass="BusinessViewController" customModule="SwiftYelp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bkM-kB-GUa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jvo-Oz-Tss"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XIw-zD-Kbo">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xJu-K4-Jab">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="268"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hM-kb-SJn">
+                                <rect key="frame" x="20" y="288" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8hM-kb-SJn" firstAttribute="leading" secondItem="XIw-zD-Kbo" secondAttribute="leadingMargin" id="AC2-vz-Xyh"/>
+                            <constraint firstAttribute="trailing" secondItem="xJu-K4-Jab" secondAttribute="trailing" id="IGq-hx-bAa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8hM-kb-SJn" secondAttribute="trailing" id="QGz-mr-bex"/>
+                            <constraint firstItem="xJu-K4-Jab" firstAttribute="height" secondItem="XIw-zD-Kbo" secondAttribute="height" multiplier="0.5" id="cso-7B-O0A"/>
+                            <constraint firstItem="8hM-kb-SJn" firstAttribute="top" secondItem="xJu-K4-Jab" secondAttribute="bottom" constant="20" id="i2p-Kl-1qq"/>
+                            <constraint firstItem="xJu-K4-Jab" firstAttribute="leading" secondItem="XIw-zD-Kbo" secondAttribute="leading" id="qj3-ef-iBZ"/>
+                            <constraint firstItem="xJu-K4-Jab" firstAttribute="top" secondItem="XIw-zD-Kbo" secondAttribute="topMargin" id="qkc-HQ-Bni"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="8hM-kb-SJn" id="AzF-br-BYw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHL-ml-CpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2000" y="-407"/>
         </scene>
     </scenes>
 </document>

@@ -16,6 +16,7 @@
 		4512A9F11CE27FDA0000D3A1 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512A9F01CE27FDA0000D3A1 /* Business.swift */; };
 		4512A9F31CE2814E0000D3A1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512A9F21CE2814E0000D3A1 /* Location.swift */; };
 		4512A9FD1CE28E280000D3A1 /* YelpCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512A9FC1CE28E280000D3A1 /* YelpCommunicator.swift */; };
+		451A668C1CE3957200F0E811 /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451A668B1CE3957200F0E811 /* BusinessViewController.swift */; };
 		64A958FAC732CDE39532F54B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EC8D3B89ED2B813270F22C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		4512A9F01CE27FDA0000D3A1 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		4512A9F21CE2814E0000D3A1 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4512A9FC1CE28E280000D3A1 /* YelpCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpCommunicator.swift; sourceTree = "<group>"; };
+		451A668B1CE3957200F0E811 /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 		8D1F12DC2C05DA2616B0E39E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C5C4A16B76434E50077699E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 			children = (
 				4512A9EB1CE27D770000D3A1 /* SearchViewController.swift */,
 				4512A9ED1CE27E8C0000D3A1 /* SearchResultViewController.swift */,
+				451A668B1CE3957200F0E811 /* BusinessViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451A668C1CE3957200F0E811 /* BusinessViewController.swift in Sources */,
 				4512A9EC1CE27D770000D3A1 /* SearchViewController.swift in Sources */,
 				4512A9EE1CE27E8C0000D3A1 /* SearchResultViewController.swift in Sources */,
 				4512A9FD1CE28E280000D3A1 /* YelpCommunicator.swift in Sources */,
