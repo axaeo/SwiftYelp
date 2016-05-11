@@ -120,13 +120,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ynv-NR-G5T">
                             <size key="itemSize" width="120" height="120"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="30"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BusinessCollectionViewCell" id="AwM-5N-daR" customClass="BusinessCollectionViewCell" customModule="SwiftYelp" customModuleProvider="target">
-                                <rect key="frame" x="10" y="60" width="120" height="120"/>
+                                <rect key="frame" x="10" y="40" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -189,35 +189,45 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchHeader" id="8eE-G4-csU" customClass="BusinessCollectionHeaderView" customModule="SwiftYelp" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searched For: ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93o-MZ-mJp">
-                                    <rect key="frame" x="8" y="14" width="539" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.71372549019999998" green="0.21960784310000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle" translatesAutoresizingMaskIntoConstraints="NO" id="WDP-45-RF0">
-                                    <rect key="frame" x="557" y="13" width="25" height="25"/>
+                                    <rect key="frame" x="8" y="8" width="15" height="15"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="25" id="C24-Of-Ici"/>
+                                        <constraint firstAttribute="width" constant="15" id="C24-Of-Ici"/>
                                         <constraint firstAttribute="width" secondItem="WDP-45-RF0" secondAttribute="height" multiplier="1:1" id="OhK-PL-7Vt"/>
                                     </constraints>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searched For: ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93o-MZ-mJp">
+                                    <rect key="frame" x="28" y="7" width="564" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.71372549019999998" green="0.21960784310000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="8eE-G4-csU" secondAttribute="leadingMargin" id="8NO-vT-FrP"/>
+                                <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="WDP-45-RF0" secondAttribute="trailing" constant="5" id="Gh7-K8-D1a"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="93o-MZ-mJp" secondAttribute="trailing" constant="10" id="RVq-pn-pAV"/>
+                                <constraint firstItem="WDP-45-RF0" firstAttribute="leading" secondItem="8eE-G4-csU" secondAttribute="leadingMargin" id="Sow-eL-wQp"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="WDP-45-RF0" secondAttribute="trailing" constant="10" id="UVb-va-Ug6"/>
                                 <constraint firstItem="WDP-45-RF0" firstAttribute="leading" secondItem="93o-MZ-mJp" secondAttribute="trailing" constant="10" id="WxH-XF-F7b"/>
+                                <constraint firstAttribute="leadingMargin" secondItem="WDP-45-RF0" secondAttribute="leading" constant="10" id="X4l-S1-IBc"/>
                                 <constraint firstItem="93o-MZ-mJp" firstAttribute="centerY" secondItem="8eE-G4-csU" secondAttribute="centerY" id="Z1C-8q-RbW"/>
                                 <constraint firstItem="WDP-45-RF0" firstAttribute="centerY" secondItem="8eE-G4-csU" secondAttribute="centerY" id="dtD-Zs-jM3"/>
+                                <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="WDP-45-RF0" secondAttribute="trailing" constant="20" id="vKb-Fx-VdV"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="93o-MZ-mJp" secondAttribute="trailing" id="yUs-Di-GhT"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
+                                    <exclude reference="UVb-va-Ug6"/>
+                                    <exclude reference="WxH-XF-F7b"/>
+                                    <exclude reference="X4l-S1-IBc"/>
+                                    <exclude reference="8NO-vT-FrP"/>
                                     <exclude reference="RVq-pn-pAV"/>
+                                    <exclude reference="vKb-Fx-VdV"/>
                                 </mask>
                             </variation>
                             <connections>
