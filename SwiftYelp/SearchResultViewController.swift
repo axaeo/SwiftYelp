@@ -17,8 +17,8 @@ class SearchResultViewController: UITableViewController {
         self.tableView.dataSource = self;
     }
     
-    override func viewDidAppear(animated: Bool) {
-       // self.navigationController?.setToolbarHidden(false, animated: false)
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false);
         self.tableView.reloadData()
     }
 
