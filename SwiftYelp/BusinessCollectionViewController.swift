@@ -42,6 +42,7 @@ class BusinessCollectionViewController: UICollectionViewController, BusinessColl
         
         let business = self.businessForIndexPath(indexPath);
         cell.nameLabel.text = business.name
+        cell.addressLabel.text = business.location!.displayAddress![0]
         AppDelegate.instance().yelpCommunicator!.downloadImageFromURL(business.ratingImageUrl!, callback: {(image, error) in
             if (image != nil) {
                  cell.ratingImageView.image = image

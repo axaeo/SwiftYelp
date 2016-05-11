@@ -109,8 +109,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1h-R6-bOK">
-                                            <rect key="frame" x="8" y="8" width="104" height="15"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <rect key="frame" x="8" y="52" width="104" height="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -120,6 +120,12 @@
                                                 <constraint firstAttribute="height" constant="25" id="B3g-A5-aYI"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIR-dU-UZC">
+                                            <rect key="frame" x="8" y="13" width="104" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -133,20 +139,26 @@
                                     <constraint firstItem="V1h-R6-bOK" firstAttribute="top" secondItem="AwM-5N-daR" secondAttribute="topMargin" id="9ej-OS-p6p"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="V1h-R6-bOK" secondAttribute="trailing" id="TfA-YN-BaH"/>
                                     <constraint firstAttribute="bottom" secondItem="kiP-MS-o3Y" secondAttribute="bottom" constant="5" id="VId-Yc-zEl"/>
+                                    <constraint firstItem="RIR-dU-UZC" firstAttribute="leading" secondItem="AwM-5N-daR" secondAttribute="leadingMargin" id="VhI-0o-8Ia"/>
+                                    <constraint firstItem="RIR-dU-UZC" firstAttribute="top" secondItem="AwM-5N-daR" secondAttribute="topMargin" constant="5" id="bb4-sE-YJC"/>
                                     <constraint firstItem="V1h-R6-bOK" firstAttribute="centerX" secondItem="AwM-5N-daR" secondAttribute="centerX" id="dGH-Oj-l31"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="V1h-R6-bOK" secondAttribute="trailing" id="pi4-Ec-YmH"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="RIR-dU-UZC" secondAttribute="trailing" id="sYc-TV-3Lh"/>
                                     <constraint firstAttribute="trailing" secondItem="kiP-MS-o3Y" secondAttribute="trailing" constant="5" id="xlm-h2-Ajk"/>
+                                    <constraint firstItem="V1h-R6-bOK" firstAttribute="centerY" secondItem="AwM-5N-daR" secondAttribute="centerY" id="yPd-od-2pm"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="0x5-FF-RSi"/>
                                         <exclude reference="1my-rM-v13"/>
                                         <exclude reference="3Ox-yM-udt"/>
+                                        <exclude reference="9ej-OS-p6p"/>
                                         <exclude reference="TfA-YN-BaH"/>
                                         <exclude reference="dGH-Oj-l31"/>
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <outlet property="addressLabel" destination="RIR-dU-UZC" id="PHg-0i-SS4"/>
                                     <outlet property="nameLabel" destination="V1h-R6-bOK" id="UWC-UQ-9I7"/>
                                     <outlet property="ratingImageView" destination="kiP-MS-o3Y" id="WhS-KE-iKm"/>
                                 </connections>

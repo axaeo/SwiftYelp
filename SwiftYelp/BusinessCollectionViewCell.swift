@@ -11,5 +11,12 @@ import UIKit
 class BusinessCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var ratingImageView: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.cornerRadius = 5
+        self.layer.masksToBounds = true
+    }
 }
