@@ -10,6 +10,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    let searchSegueID:String = "search"
+    
     var businessSearchResults: Array<Business>?
     
     override func viewWillAppear(animated: Bool) {
@@ -17,10 +19,14 @@ class SearchViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "search" {
+        if segue.identifier == searchSegueID {
             let searchResultVC:SearchResultViewController = segue.destinationViewController as! SearchResultViewController
             searchResultVC.businessSearchResults = self.businessSearchResults;
         }
+    }
+    
+    func showResultsPage() {
+        self.performSegueWithIdentifier(searchSegueID, sender: self)
     }
     
     @IBAction func submitSearch(sender: UIButton) {
@@ -38,10 +44,6 @@ class SearchViewController: UIViewController {
                                                     }
                                                 })
         
-    }
-    
-    func showResultsPage() {
-        self.performSegueWithIdentifier("search", sender: self)
     }
 
 }

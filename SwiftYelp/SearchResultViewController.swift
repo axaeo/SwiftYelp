@@ -10,6 +10,8 @@ import UIKit
 
 class SearchResultViewController: UITableViewController {
 
+    let detailSegueID:String = "detail"
+    
     var businessSearchResults: Array<Business>?
     var selectedIndexPath: NSIndexPath?
     
@@ -42,11 +44,11 @@ class SearchResultViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedIndexPath = indexPath;
-        performSegueWithIdentifier("detail", sender: self)
+        performSegueWithIdentifier(detailSegueID, sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "detail") {
+        if (segue.identifier == detailSegueID) {
             let destination:BusinessViewController = segue.destinationViewController as! BusinessViewController
             destination.business = self.businessForIndexPath(self.selectedIndexPath!)
         }
