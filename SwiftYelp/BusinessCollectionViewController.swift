@@ -8,7 +8,8 @@
 
 import UIKit
 
-private let reuseIdentifier = "BusinessCollectionViewCell"
+private let cellReuseIdentifier = "BusinessCollectionViewCell"
+private let headerReuseIdentifier = "searchHeader"
 private let detailSegueID:String = "detail"
 
 class BusinessCollectionViewController: UICollectionViewController {
@@ -36,10 +37,24 @@ class BusinessCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BusinessCollectionViewCell
-        cell.nameLabel.text = self.businessForIndexPath(indexPath).name
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! BusinessCollectionViewCell
+        
+        let business = self.businessForIndexPath(indexPath);
+        cell.nameLabel.text = business.name
+        AppDelegate.instance().yelpCommunicator!.downloadImageFromURL(business.ratingImageUrl!, callback: {(image, error) in
+            if (image != nil) {
+                 cell.ratingImageView.image = image
+            }
+        })
+       
         
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+            let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, forIndexPath: indexPath) as! BusinessCollectionHeaderView
+            header.label.text = String(format: "Searched for: %@", "Ethiopian")
+            return header;
     }
     
     func businessForIndexPath(indexPath: NSIndexPath) -> Business {

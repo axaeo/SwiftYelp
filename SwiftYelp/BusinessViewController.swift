@@ -12,10 +12,17 @@ class BusinessViewController: UIViewController {
 
     var business:Business?
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var restaurantImageView: UIImageView!
     
     override func viewWillAppear(animated: Bool) {
         self.title = business?.name
         addressLabel.text = business?.location?.displayAddress![0]
+        AppDelegate.instance().yelpCommunicator!.downloadImageFromURL((business?.imageUrl)!, callback: {(image, error) in
+            if (image != nil) {
+                self.restaurantImageView.image  = image
+            }
+        })
+        
     }
 
 }

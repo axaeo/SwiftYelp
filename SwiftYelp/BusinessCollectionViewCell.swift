@@ -9,6 +9,7 @@
 import UIKit
 
 class BusinessCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ratingImageView: UIImageView!
 }
