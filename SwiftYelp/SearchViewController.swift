@@ -37,7 +37,7 @@ class SearchViewController: UIViewController {
                                                 location: "Toronto",
                                                 callback: {(data, error) in
                                                     if (data != nil) {
-                                                        self.businessSearchResults = data
+                                                        self.businessSearchResults = data!.sort{ $0.name < $1.name }
                                                         dispatch_async(dispatch_get_main_queue(),{
                                                             self.showResultsPage()
                                                         })
