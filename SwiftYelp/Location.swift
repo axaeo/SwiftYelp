@@ -10,4 +10,12 @@ import UIKit
 
 class Location  {
 
+    class func fromJson(json: Dictionary<String, AnyObject>) -> Location {
+        let result = Location()
+        
+        //TODO: Write rest of this method
+        
+        return result;
+    }
+    
 }
