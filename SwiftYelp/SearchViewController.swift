@@ -22,7 +22,7 @@ class SearchViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == searchSegueID {
-            let searchResultVC:SearchResultViewController = segue.destinationViewController as! SearchResultViewController
+            let searchResultVC:BusinessCollectionViewController = segue.destinationViewController as! BusinessCollectionViewController
             searchResultVC.businessSearchResults = self.businessSearchResults;
         }
     }
