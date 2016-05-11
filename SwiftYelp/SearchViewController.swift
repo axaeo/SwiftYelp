@@ -14,6 +14,8 @@ class SearchViewController: UIViewController {
     
     var businessSearchResults: Array<Business>?
     
+    @IBOutlet weak var searchField: UITextField!
+    
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false);
     }

@@ -36,8 +36,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for something!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDA-EJ-WVJ">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftYelp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpE-83-FdM">
+                                <rect key="frame" x="20" y="224" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbB-Cv-4GT">
-                                <rect key="frame" x="40" y="285" width="520" height="30"/>
+                                <rect key="frame" x="40" y="335" width="520" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="submitSearch:" destination="cqS-aW-p0Q" eventType="touchUpInside" id="yba-pr-DJT"/>
@@ -46,19 +57,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dpE-83-FdM" firstAttribute="leading" secondItem="Ugu-5i-Yes" secondAttribute="leadingMargin" id="3s6-Ej-H0L"/>
+                            <constraint firstItem="xDA-EJ-WVJ" firstAttribute="top" secondItem="dpE-83-FdM" secondAttribute="bottom" constant="40" id="AZF-LC-pdv"/>
+                            <constraint firstItem="xDA-EJ-WVJ" firstAttribute="centerY" secondItem="Ugu-5i-Yes" secondAttribute="centerY" id="EMb-HK-RX0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jbB-Cv-4GT" secondAttribute="trailing" constant="20" id="hHY-2m-uuz"/>
                             <constraint firstItem="jbB-Cv-4GT" firstAttribute="centerX" secondItem="Ugu-5i-Yes" secondAttribute="centerX" id="iU3-gI-zAa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xDA-EJ-WVJ" secondAttribute="trailing" id="jvT-L9-yNX"/>
+                            <constraint firstItem="xDA-EJ-WVJ" firstAttribute="leading" secondItem="Ugu-5i-Yes" secondAttribute="leadingMargin" id="lXl-uQ-Suc"/>
                             <constraint firstItem="jbB-Cv-4GT" firstAttribute="leading" secondItem="Ugu-5i-Yes" secondAttribute="leadingMargin" constant="20" id="nAq-Mv-KLm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dpE-83-FdM" secondAttribute="trailing" id="t9G-i2-iJ1"/>
                             <constraint firstItem="jbB-Cv-4GT" firstAttribute="centerY" secondItem="Ugu-5i-Yes" secondAttribute="centerY" id="tNL-F4-QnR"/>
+                            <constraint firstItem="jbB-Cv-4GT" firstAttribute="top" secondItem="xDA-EJ-WVJ" secondAttribute="bottom" constant="20" id="u4c-95-2nC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="iU3-gI-zAa"/>
+                                <exclude reference="tNL-F4-QnR"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="0ih-rt-rz1"/>
                     <connections>
+                        <outlet property="searchField" destination="xDA-EJ-WVJ" id="4fd-TM-Q8W"/>
                         <segue destination="SIW-xV-7O0" kind="show" identifier="search" id="JcA-yr-tCG"/>
                     </connections>
                 </viewController>
