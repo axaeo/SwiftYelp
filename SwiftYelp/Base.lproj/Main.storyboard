@@ -380,7 +380,7 @@
                                     <constraint firstAttribute="width" secondItem="gLx-63-a46" secondAttribute="height" multiplier="83:15" id="xYq-Cl-Igo"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xJu-K4-Jab">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="xJu-K4-Jab">
                                 <rect key="frame" x="5" y="5" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xJu-K4-Jab" secondAttribute="height" multiplier="1:1" id="ilq-nU-z50"/>
@@ -498,6 +498,7 @@
     </scenes>
     <resources>
         <image name="Yelp" width="834" height="372"/>
+        <image name="placeholder" width="150" height="150"/>
         <image name="triangle" width="1000" height="866"/>
     </resources>
 </document>
