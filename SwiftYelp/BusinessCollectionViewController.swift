@@ -78,16 +78,20 @@ class BusinessCollectionViewController: UICollectionViewController, BusinessColl
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let selectedBusiness = self.businessForIndexPath(indexPath);
-        AppDelegate.instance().yelpCommunicator!.getAdditionalDataForBusiness(selectedBusiness, callback: {(error) in
-            if (error == nil) {
-                self.selectedIndexPath = indexPath;
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.performSegueWithIdentifier(detailSegueID, sender: self)
-                })
-            } else {
-                self.showErrorMessage("Could not retrieve business details", title: "Connnection Error")
-            }
-        })
+        self.showActivityIndicator { (spinner) in
+            AppDelegate.instance().yelpCommunicator!.getAdditionalDataForBusiness(selectedBusiness, callback: {(error) in
+                    spinner.removeFromSuperview()
+                    if (error == nil) {
+                        self.selectedIndexPath = indexPath;
+                        dispatch_async(dispatch_get_main_queue(),{
+                            self.performSegueWithIdentifier(detailSegueID, sender: self)
+                        })
+                    } else {
+                        self.showErrorMessage("Could not retrieve business details", title: "Connnection Error")
+                    }
+            })
+        }
+        
         
     }
     
