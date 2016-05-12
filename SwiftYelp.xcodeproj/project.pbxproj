@@ -23,6 +23,7 @@
 		45476E1D1CE4F2C700E03828 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45476E1C1CE4F2C700E03828 /* UIViewController+Extensions.swift */; };
 		45476E631CE4FBCE00E03828 /* SwiftYelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45476E621CE4FBCE00E03828 /* SwiftYelpTests.swift */; };
 		45476E6A1CE4FBD400E03828 /* SwiftYelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45476E5A1CE4F9CD00E03828 /* SwiftYelp.swift */; };
+		45476E6E1CE509A500E03828 /* YelpAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45476E6D1CE509A500E03828 /* YelpAPI.plist */; };
 		64A958FAC732CDE39532F54B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EC8D3B89ED2B813270F22C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		45476E601CE4FBCE00E03828 /* SwiftYelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftYelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45476E621CE4FBCE00E03828 /* SwiftYelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftYelpTests.swift; sourceTree = "<group>"; };
 		45476E641CE4FBCE00E03828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45476E6D1CE509A500E03828 /* YelpAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = YelpAPI.plist; sourceTree = "<group>"; };
 		8D1F12DC2C05DA2616B0E39E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C5C4A16B76434E50077699E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 				4512A9DC1CE27D2E0000D3A1 /* Main.storyboard */,
 				4512A9DF1CE27D2E0000D3A1 /* Assets.xcassets */,
 				4512A9E11CE27D2E0000D3A1 /* LaunchScreen.storyboard */,
+				45476E6D1CE509A500E03828 /* YelpAPI.plist */,
 				4512A9E41CE27D2E0000D3A1 /* Info.plist */,
 			);
 			path = SwiftYelp;
@@ -285,6 +288,7 @@
 				4512A9E31CE27D2E0000D3A1 /* LaunchScreen.storyboard in Resources */,
 				4512A9E01CE27D2E0000D3A1 /* Assets.xcassets in Resources */,
 				4512A9DE1CE27D2E0000D3A1 /* Main.storyboard in Resources */,
+				45476E6E1CE509A500E03828 /* YelpAPI.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

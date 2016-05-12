@@ -13,12 +13,12 @@ class YelpCommunicator {
     
     var client: OAuthSwiftClient?
     
-    init() {
+    init(consumerKey:String, consumerSecret:String, accessToken:String, accessTokenSecret:String) {
         client = OAuthSwiftClient(
-            consumerKey: "aRoBgL5-zphoD2SFRhKRzQ",
-            consumerSecret: "rqT2Kup5KmtDLlgL72dr1NEn0to",
-            accessToken: "ftHUQK527kQ4WJCeFD0qsJZ4SKn2M8eO",
-            accessTokenSecret: "2Yp-ARyUPm-CEnH-IHv5Ez2uN_8"
+            consumerKey: consumerKey,
+            consumerSecret: consumerSecret,
+            accessToken: accessToken,
+            accessTokenSecret: accessTokenSecret
         )
     }
     

@@ -16,7 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-        self.yelpCommunicator = YelpCommunicator();
+        //WARNING: - Incomplete implementation. Ensure values are placed in plist!
+        let path = NSBundle.mainBundle().pathForResource("YelpAPI", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
+        let consumerKey = dict!.valueForKey("consumerKey") as? String
+        let consumerSecret = dict!.valueForKey("consumerSecret") as? String
+        let accessToken = dict!.valueForKey("accessToken") as? String
+        let accessTokenSecret = dict!.valueForKey("accessTokenSecret") as? String
+        
+        self.yelpCommunicator = YelpCommunicator(consumerKey: consumerKey!, consumerSecret: consumerSecret!, accessToken: accessToken!, accessTokenSecret: accessTokenSecret!);
         
         return true
     }
