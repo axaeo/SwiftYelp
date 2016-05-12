@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class BusinessViewController: UIViewController {
 
@@ -74,11 +75,24 @@ class BusinessViewController: UIViewController {
     }
     
     @IBAction func callButtonPressed(sender: UIButton) {
+        if let phoneNumber = business?.phone {
+            UIApplication.sharedApplication().openURL(NSURL(string: String(format:"tel://%@", phoneNumber))!)
+        }
     }
     
     @IBAction func mapsButtonPressed(sender: UIButton) {
+        let lat:CLLocationDegrees = (business?.location?.latitude)!
+        let lng:CLLocationDegrees = (business?.location?.longitude)!
+        
+        let coordinate = CLLocationCoordinate2DMake(lat,lng)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = business?.name
+        mapItem.openInMapsWithLaunchOptions([MKLaunchOptionsDirectionsModeDriving : MKLaunchOptionsDirectionsModeKey])
     }
     
     @IBAction func seeMorePressed(sender: UIButton) {
+        if let url = business?.mobileUrl {
+            UIApplication.sharedApplication().openURL(NSURL(string:(url))!)
+        }
     }
 }

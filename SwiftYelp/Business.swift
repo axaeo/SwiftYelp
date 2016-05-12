@@ -12,7 +12,7 @@ class Business {
 
     var serverId: String?
     var name: String?
-    var displayPhone: String?
+    var phone: String?
     var rating: Float?
     var reviewCount: Int?
     var snippetText: String?
@@ -43,7 +43,7 @@ class Business {
         
         result.serverId = json["id"] as? String
         result.name = json["name"] as? String
-        result.displayPhone = json["display_phone"] as? String
+        result.phone = json["phone"] as? String
         result.rating = json["rating"] as? Float
         result.reviewCount = json["review_count"] as? Int
         result.snippetText = json["snippet_text"] as? String

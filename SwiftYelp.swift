@@ -19,7 +19,7 @@ class SwiftYelp: XCTestCase {
             
             XCTAssertEqual(business.name, "Urban Curry")
             XCTAssertEqual(business.serverId, "urban-curry-san-francisco")
-            XCTAssertEqual(business.displayPhone, "+1-415-677-9743")
+            XCTAssertEqual(business.phone, "4156779743")
             XCTAssertEqual(business.rating, 4.0)
             XCTAssertEqual(business.reviewCount, 455)
             XCTAssertEqual(business.snippetText, "One of the owners is a former Sherpa from Nepal who has summitted Mt. Everest twice. While the restaurant is in a seeder part of the City, it's also on one...")
