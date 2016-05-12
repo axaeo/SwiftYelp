@@ -45,7 +45,6 @@ class SearchViewController: UIViewController {
         let searchTerm = self.searchFieldContents()
         
         if searchTerm!.isEmpty {
-            //TODO show error
             return
         }
         
@@ -54,12 +53,18 @@ class SearchViewController: UIViewController {
                                                 location: "Toronto",
                                                 callback: {(data, error) in
                                                     if (data != nil) {
-                                                        self.businessSearchResults = data!.sort{ $0.name < $1.name }
-                                                        dispatch_async(dispatch_get_main_queue(),{
-                                                            self.showResultsPage()
-                                                        })
+                                                        if (!data!.isEmpty) {
+                                                            self.businessSearchResults = data!.sort{ $0.name < $1.name }
+                                                            dispatch_async(dispatch_get_main_queue(),{
+                                                                
+                                                                self.showResultsPage()
+                                                            })
+                                                        } else {
+                                                             self.showErrorMessage("There were no results for that search term", title: "No Results")
+                                                        }
+                                                        
                                                     } else {
-                                                        //TODO show error message
+                                                         self.showErrorMessage("Could not retrieve search results", title: "Connnection Error")
                                                     }
                                                 })
         

@@ -24,6 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     class func instance() -> AppDelegate {
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
-
+    
 }
 

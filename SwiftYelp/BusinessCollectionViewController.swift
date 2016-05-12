@@ -85,13 +85,11 @@ class BusinessCollectionViewController: UICollectionViewController, BusinessColl
                     self.performSegueWithIdentifier(detailSegueID, sender: self)
                 })
             } else {
-                //TODO show error message
+                self.showErrorMessage("Could not retrieve business details", title: "Connnection Error")
             }
         })
         
     }
-    
-    //TODO: Header?
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == detailSegueID) {
