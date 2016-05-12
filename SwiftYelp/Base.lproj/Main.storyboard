@@ -199,8 +199,17 @@
                                         <constraint firstAttribute="width" secondItem="WDP-45-RF0" secondAttribute="height" multiplier="1:1" id="OhK-PL-7Vt"/>
                                     </constraints>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(A-Z)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsD-mP-8AR">
+                                    <rect key="frame" x="23" y="7" width="40" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="MSL-wg-t8K"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.71372549019999998" green="0.21960784310000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searched For: ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93o-MZ-mJp">
-                                    <rect key="frame" x="28" y="7" width="564" height="17"/>
+                                    <rect key="frame" x="73" y="7" width="519" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" red="0.71372549019999998" green="0.21960784310000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -208,8 +217,10 @@
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="BsD-mP-8AR" secondAttribute="trailing" constant="10" id="86U-Rl-TYq"/>
                                 <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="8eE-G4-csU" secondAttribute="leadingMargin" id="8NO-vT-FrP"/>
-                                <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="WDP-45-RF0" secondAttribute="trailing" constant="5" id="Gh7-K8-D1a"/>
+                                <constraint firstItem="BsD-mP-8AR" firstAttribute="leading" secondItem="WDP-45-RF0" secondAttribute="trailing" id="FkL-rw-inI"/>
+                                <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="WDP-45-RF0" secondAttribute="trailing" constant="50" id="Gh7-K8-D1a"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="93o-MZ-mJp" secondAttribute="trailing" constant="10" id="RVq-pn-pAV"/>
                                 <constraint firstItem="WDP-45-RF0" firstAttribute="leading" secondItem="8eE-G4-csU" secondAttribute="leadingMargin" id="Sow-eL-wQp"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="WDP-45-RF0" secondAttribute="trailing" constant="10" id="UVb-va-Ug6"/>
@@ -219,6 +230,7 @@
                                 <constraint firstItem="WDP-45-RF0" firstAttribute="centerY" secondItem="8eE-G4-csU" secondAttribute="centerY" id="dtD-Zs-jM3"/>
                                 <constraint firstItem="93o-MZ-mJp" firstAttribute="leading" secondItem="WDP-45-RF0" secondAttribute="trailing" constant="20" id="vKb-Fx-VdV"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="93o-MZ-mJp" secondAttribute="trailing" id="yUs-Di-GhT"/>
+                                <constraint firstItem="BsD-mP-8AR" firstAttribute="centerY" secondItem="WDP-45-RF0" secondAttribute="centerY" id="zaM-4c-Z0d"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
@@ -226,6 +238,7 @@
                                     <exclude reference="WxH-XF-F7b"/>
                                     <exclude reference="X4l-S1-IBc"/>
                                     <exclude reference="8NO-vT-FrP"/>
+                                    <exclude reference="Gh7-K8-D1a"/>
                                     <exclude reference="RVq-pn-pAV"/>
                                     <exclude reference="vKb-Fx-VdV"/>
                                 </mask>
