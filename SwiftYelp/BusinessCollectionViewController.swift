@@ -77,8 +77,18 @@ class BusinessCollectionViewController: UICollectionViewController, BusinessColl
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.selectedIndexPath = indexPath;
-        performSegueWithIdentifier(detailSegueID, sender: self)
+        let selectedBusiness = self.businessForIndexPath(indexPath);
+        AppDelegate.instance().yelpCommunicator!.getAdditionalDataForBusiness(selectedBusiness, callback: {(error) in
+            if (error == nil) {
+                self.selectedIndexPath = indexPath;
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.performSegueWithIdentifier(detailSegueID, sender: self)
+                })
+            } else {
+                //TODO show error message
+            }
+        })
+        
     }
     
     //TODO: Header?

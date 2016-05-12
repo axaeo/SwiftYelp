@@ -47,6 +47,28 @@ class YelpCommunicator {
         )
     }
     
+    func getAdditionalDataForBusiness(business: Business, callback: (error: ErrorType?) -> Void) {
+    
+        let url = String(format:"https://api.yelp.com/v2/business/%@", business.serverId!)
+        client?.get(
+            url,
+            parameters: [:],
+            success: { (data, response) in
+                do {
+                    let resultJSON = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                    let result = Business.fromJson(resultJSON as! Dictionary<String, AnyObject>)
+                    business.reviews = result.reviews
+                    callback(error: nil)
+                } catch  {
+                    callback(error: error);
+                }
+            },
+            failure: { (error) in
+                callback(error: error);
+            }
+        )
+    }
+    
     func downloadDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
         NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
             completion(data: data, response: response, error: error)

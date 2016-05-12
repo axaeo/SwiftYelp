@@ -26,6 +26,7 @@ class Business {
     
     var categories: Array<String>?
     var location: Location?
+    var reviews: Array<Review>?
     
     class func fromArray(array: Array<Dictionary<String, AnyObject>>) -> Array<Business> {
         var result = Array<Business>()
@@ -56,6 +57,10 @@ class Business {
         
         result.categories = Business.processCategoriesArray(json["categories"] as! Array<AnyObject>)
         result.location = Location.fromJson(json["location"] as! Dictionary<String, AnyObject>)
+        if (json["reviews"] != nil) {
+            result.reviews = Review.fromArray(json["reviews"] as! Array<AnyObject>)
+        }
+        
         
         return result;
     }
