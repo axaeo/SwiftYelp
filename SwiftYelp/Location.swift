@@ -15,7 +15,7 @@ class Location  {
     var latitude:Double?
     var longitude:Double?
     
-    class func fromJson(json: Dictionary<String, AnyObject>) -> Location {
+    class func fromJson(_ json: Dictionary<String, AnyObject>) -> Location {
         let result = Location()
         
         result.displayAddress = json["display_address"] as? Array<String>

@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   YelpAPI.plist
-   SwiftYelp
-
-   Created by Alexander Orchard on 2016-05-12.
-   Copyright (c) 2016 Intelliware Development. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-        <key>consumerKey</key>
-        <string></string>
-        <key>consumerSecret</key>
-        <string></string>
-        <key>accessToken</key>
-        <string></string>
-        <key>accessTokenSecret</key>
-        <string></string>
-    </dict>
+<dict>
+	<key>consumerKey</key>
+	<string>aRoBgL5-zphoD2SFRhKRzQ</string>
+	<key>consumerSecret</key>
+	<string>rqT2Kup5KmtDLlgL72dr1NEn0to</string>
+	<key>accessToken</key>
+	<string>ftHUQK527kQ4WJCeFD0qsJZ4SKn2M8eO</string>
+	<key>accessTokenSecret</key>
+	<string>2Yp-ARyUPm-CEnH-IHv5Ez2uN_8</string>
+</dict>
 </plist>

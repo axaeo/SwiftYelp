@@ -17,7 +17,7 @@ class Review {
     var timestamp:Int?
     var authorName:String?
     
-    class func fromArray(array: Array<AnyObject>) -> Array<Review> {
+    class func fromArray(_ array: Array<AnyObject>) -> Array<Review> {
         var result = Array<Review>()
         
         for json in array {
@@ -27,7 +27,7 @@ class Review {
         return result;
     }
     
-    class func fromJson(json:Dictionary<String, AnyObject>) -> Review {
+    class func fromJson(_ json:Dictionary<String, AnyObject>) -> Review {
         let result:Review = Review()
         
         result.serverId = json["id"] as? String

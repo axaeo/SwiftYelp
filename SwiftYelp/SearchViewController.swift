@@ -7,6 +7,17 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 class SearchViewController: UIViewController {
 
@@ -20,27 +31,27 @@ class SearchViewController: UIViewController {
         self.searchField.layer.borderWidth = 2;
         self.searchField.layer.cornerRadius = 3;
         self.searchField.layer.masksToBounds = true;
-        self.searchField.layer.borderColor = UIColor(colorLiteralRed: 182/255, green: 56/255, blue: 34/255, alpha: 1).CGColor
+        self.searchField.layer.borderColor = UIColor(colorLiteralRed: 182/255, green: 56/255, blue: 34/255, alpha: 1).cgColor
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false);
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == searchSegueID {
-            let searchResultVC:BusinessCollectionViewController = segue.destinationViewController as! BusinessCollectionViewController
+            let searchResultVC:BusinessCollectionViewController = segue.destination as! BusinessCollectionViewController
             searchResultVC.businessSearchResults = self.businessSearchResults;
             searchResultVC.searchedTerm = self.searchFieldContents()
         }
     }
     
     func showResultsPage() {
-        self.performSegueWithIdentifier(searchSegueID, sender: self)
+        self.performSegue(withIdentifier: searchSegueID, sender: self)
     }
     
-    @IBAction func submitSearch(sender: UIButton) {
+    @IBAction func submitSearch(_ sender: UIButton) {
         
         let searchTerm = self.searchFieldContents()
         
@@ -56,8 +67,8 @@ class SearchViewController: UIViewController {
                         spinner.removeFromSuperview()
                         if (data != nil) {
                             if (!data!.isEmpty) {
-                                self.businessSearchResults = data!.sort{ $0.name < $1.name }
-                                dispatch_async(dispatch_get_main_queue(),{
+                                self.businessSearchResults = data!.sorted{ $0.name < $1.name }
+                                DispatchQueue.main.async(execute: {
                                     
                                     self.showResultsPage()
                                 })
@@ -76,7 +87,7 @@ class SearchViewController: UIViewController {
     
     func searchFieldContents() -> String? {
         let searchString = self.searchField.text
-        return searchString!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        return searchString!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 
 }

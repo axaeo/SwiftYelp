@@ -24,7 +24,8 @@
 		45476E631CE4FBCE00E03828 /* SwiftYelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45476E621CE4FBCE00E03828 /* SwiftYelpTests.swift */; };
 		45476E6A1CE4FBD400E03828 /* SwiftYelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45476E5A1CE4F9CD00E03828 /* SwiftYelp.swift */; };
 		45476E6E1CE509A500E03828 /* YelpAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45476E6D1CE509A500E03828 /* YelpAPI.plist */; };
-		64A958FAC732CDE39532F54B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EC8D3B89ED2B813270F22C /* Pods.framework */; };
+		D14DAF9BB78A328A56F27BD6 /* Pods_SwiftYelpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B695B562584A2FEF7FECAE31 /* Pods_SwiftYelpTests.framework */; };
+		E4513E3713B64824121DB40E /* Pods_SwiftYelp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99F9EBFA394C5CCA09CF1CB /* Pods_SwiftYelp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		27EC8D3B89ED2B813270F22C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DF089CE66EBADE6F8721963 /* Pods-SwiftYelp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYelp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYelp/Pods-SwiftYelp.debug.xcconfig"; sourceTree = "<group>"; };
 		4512A9D51CE27D2E0000D3A1 /* SwiftYelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftYelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4512A9D81CE27D2E0000D3A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4512A9DD1CE27D2E0000D3A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,8 +62,13 @@
 		45476E621CE4FBCE00E03828 /* SwiftYelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftYelpTests.swift; sourceTree = "<group>"; };
 		45476E641CE4FBCE00E03828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45476E6D1CE509A500E03828 /* YelpAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = YelpAPI.plist; sourceTree = "<group>"; };
+		755ECA5E7FD4E013B2E0C090 /* Pods-SwiftYelpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYelpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYelpTests/Pods-SwiftYelpTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D1F12DC2C05DA2616B0E39E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B695B562584A2FEF7FECAE31 /* Pods_SwiftYelpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYelpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7813F950704B4FC2854CEBE /* Pods-SwiftYelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYelp/Pods-SwiftYelp.release.xcconfig"; sourceTree = "<group>"; };
 		C5C4A16B76434E50077699E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CE5BDD140712038C5A2F623E /* Pods-SwiftYelpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYelpTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYelpTests/Pods-SwiftYelpTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D99F9EBFA394C5CCA09CF1CB /* Pods_SwiftYelp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYelp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64A958FAC732CDE39532F54B /* Pods.framework in Frameworks */,
+				E4513E3713B64824121DB40E /* Pods_SwiftYelp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D14DAF9BB78A328A56F27BD6 /* Pods_SwiftYelpTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				27EC8D3B89ED2B813270F22C /* Pods.framework */,
+				D99F9EBFA394C5CCA09CF1CB /* Pods_SwiftYelp.framework */,
+				B695B562584A2FEF7FECAE31 /* Pods_SwiftYelpTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,6 +207,10 @@
 			children = (
 				C5C4A16B76434E50077699E8 /* Pods.debug.xcconfig */,
 				8D1F12DC2C05DA2616B0E39E /* Pods.release.xcconfig */,
+				2DF089CE66EBADE6F8721963 /* Pods-SwiftYelp.debug.xcconfig */,
+				B7813F950704B4FC2854CEBE /* Pods-SwiftYelp.release.xcconfig */,
+				CE5BDD140712038C5A2F623E /* Pods-SwiftYelpTests.debug.xcconfig */,
+				755ECA5E7FD4E013B2E0C090 /* Pods-SwiftYelpTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -208,12 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4512A9E71CE27D2E0000D3A1 /* Build configuration list for PBXNativeTarget "SwiftYelp" */;
 			buildPhases = (
+				B79CC97AC76495E2F052E803 /* [CP] Check Pods Manifest.lock */,
 				4512A9D11CE27D2E0000D3A1 /* Sources */,
 				4512A9D21CE27D2E0000D3A1 /* Frameworks */,
-				B79CC97AC76495E2F052E803 /* Check Pods Manifest.lock */,
 				4512A9D31CE27D2E0000D3A1 /* Resources */,
-				FC5176FA345D1481E5C7497E /* Embed Pods Frameworks */,
-				DB6BE9C7B11BE23B0ECF12CB /* Copy Pods Resources */,
+				FC5176FA345D1481E5C7497E /* [CP] Embed Pods Frameworks */,
+				DB6BE9C7B11BE23B0ECF12CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45476E671CE4FBCE00E03828 /* Build configuration list for PBXNativeTarget "SwiftYelpTests" */;
 			buildPhases = (
+				FE2AC23FB903B094ADD212DC /* [CP] Check Pods Manifest.lock */,
 				45476E5C1CE4FBCE00E03828 /* Sources */,
 				45476E5D1CE4FBCE00E03828 /* Frameworks */,
 				45476E5E1CE4FBCE00E03828 /* Resources */,
+				6F1F2A1B4559BE81F2734E01 /* [CP] Embed Pods Frameworks */,
+				F4EFC23DD20069055DD35C0C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,14 +266,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Intelliware Development";
 				TargetAttributes = {
 					4512A9D41CE27D2E0000D3A1 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					45476E5F1CE4FBCE00E03828 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 4512A9D41CE27D2E0000D3A1;
 					};
 				};
@@ -302,14 +321,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B79CC97AC76495E2F052E803 /* Check Pods Manifest.lock */ = {
+		6F1F2A1B4559BE81F2734E01 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYelpTests/Pods-SwiftYelpTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B79CC97AC76495E2F052E803 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,34 +351,64 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DB6BE9C7B11BE23B0ECF12CB /* Copy Pods Resources */ = {
+		DB6BE9C7B11BE23B0ECF12CB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYelp/Pods-SwiftYelp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FC5176FA345D1481E5C7497E /* Embed Pods Frameworks */ = {
+		F4EFC23DD20069055DD35C0C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYelpTests/Pods-SwiftYelpTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC5176FA345D1481E5C7497E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYelp/Pods-SwiftYelp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE2AC23FB903B094ADD212DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -421,8 +485,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -449,6 +515,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -466,8 +533,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -486,54 +555,66 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		4512A9E81CE27D2E0000D3A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5C4A16B76434E50077699E8 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 2DF089CE66EBADE6F8721963 /* Pods-SwiftYelp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftYelp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelliware.SwiftYelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		4512A9E91CE27D2E0000D3A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D1F12DC2C05DA2616B0E39E /* Pods.release.xcconfig */;
+			baseConfigurationReference = B7813F950704B4FC2854CEBE /* Pods-SwiftYelp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftYelp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelliware.SwiftYelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		45476E681CE4FBCE00E03828 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5BDD140712038C5A2F623E /* Pods-SwiftYelpTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SwiftYelpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelliware.SwiftYelpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftYelp.app/SwiftYelp";
 			};
 			name = Debug;
 		};
 		45476E691CE4FBCE00E03828 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 755ECA5E7FD4E013B2E0C090 /* Pods-SwiftYelpTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SwiftYelpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelliware.SwiftYelpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftYelp.app/SwiftYelp";
 			};
 			name = Release;
@@ -566,6 +647,7 @@
 				45476E691CE4FBCE00E03828 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -16,29 +16,29 @@ class BusinessCollectionViewController: UICollectionViewController, BusinessColl
 
     var businessSearchResults: Array<Business>?
     var searchedTerm: String?
-    var selectedIndexPath: NSIndexPath?
+    var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false);
         self.collectionView?.reloadData()
     }
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (self.businessSearchResults?.count)!
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! BusinessCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! BusinessCollectionViewCell
         
         let business = self.businessForIndexPath(indexPath);
         cell.nameLabel.text = business.name
@@ -53,8 +53,8 @@ class BusinessCollectionViewController: UICollectionViewController, BusinessColl
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, forIndexPath: indexPath) as! BusinessCollectionHeaderView
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as! BusinessCollectionHeaderView
         header.label.text = String(format: "Searched for: %@", searchedTerm!)
         header.delegate = self;
         
@@ -66,25 +66,25 @@ class BusinessCollectionViewController: UICollectionViewController, BusinessColl
         return header;
     }
     
-    func didTapHeader(sender: BusinessCollectionHeaderView) {
-        self.businessSearchResults = self.businessSearchResults?.reverse()
+    func didTapHeader(_ sender: BusinessCollectionHeaderView) {
+        self.businessSearchResults = self.businessSearchResults?.reversed()
         self.collectionView?.reloadData()
-        sender.imageView.transform = CGAffineTransformConcat(sender.imageView.transform, CGAffineTransformMakeScale(1, -1));
+        sender.imageView.transform = sender.imageView.transform.concatenating(CGAffineTransform(scaleX: 1, y: -1));
     }
     
-    func businessForIndexPath(indexPath: NSIndexPath) -> Business {
-        return self.businessSearchResults![indexPath.row]
+    func businessForIndexPath(_ indexPath: IndexPath) -> Business {
+        return self.businessSearchResults![(indexPath as NSIndexPath).row]
     }
 
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedBusiness = self.businessForIndexPath(indexPath);
         self.showActivityIndicator { (spinner) in
             AppDelegate.instance().yelpCommunicator!.getAdditionalDataForBusiness(selectedBusiness, callback: {(error) in
                     spinner.removeFromSuperview()
                     if (error == nil) {
                         self.selectedIndexPath = indexPath;
-                        dispatch_async(dispatch_get_main_queue(),{
-                            self.performSegueWithIdentifier(detailSegueID, sender: self)
+                        DispatchQueue.main.async(execute: {
+                            self.performSegue(withIdentifier: detailSegueID, sender: self)
                         })
                     } else {
                         self.showErrorMessage("Could not retrieve business details", title: "Connnection Error")
@@ -95,9 +95,9 @@ class BusinessCollectionViewController: UICollectionViewController, BusinessColl
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == detailSegueID) {
-            let destination:BusinessViewController = segue.destinationViewController as! BusinessViewController
+            let destination:BusinessViewController = segue.destination as! BusinessViewController
             destination.business = self.businessForIndexPath(self.selectedIndexPath!)
         }
     }

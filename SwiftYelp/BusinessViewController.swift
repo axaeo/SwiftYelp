@@ -26,11 +26,11 @@ class BusinessViewController: UIViewController {
     override func viewDidLoad() {
         self.restaurantImageView.layer.cornerRadius = 5
         self.restaurantImageView.layer.borderWidth = 2;
-        self.restaurantImageView.layer.borderColor = UIColor(colorLiteralRed: 182/255, green: 56/255, blue: 34/255, alpha: 1).CGColor
+        self.restaurantImageView.layer.borderColor = UIColor(colorLiteralRed: 182/255, green: 56/255, blue: 34/255, alpha: 1).cgColor
         self.restaurantImageView.layer.masksToBounds = true
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.title = business?.name
         addressLabel.text = business?.location?.displayAddress![0]
         reviewCountLabel.text = String(format: "Based on %d reviews", (business?.reviewCount)!)
@@ -60,13 +60,13 @@ class BusinessViewController: UIViewController {
             })
         } else {
             self.reviewLabel.text = "No reviews."
-            self.reviewAuthorLabel.hidden = true;
-            self.reviewImageView.hidden = true;
+            self.reviewAuthorLabel.isHidden = true;
+            self.reviewImageView.isHidden = true;
         }
         
     }
     
-    func styleClosedLabel(isClosed:Bool) {
+    func styleClosedLabel(_ isClosed:Bool) {
         if (isClosed) {
             self.closedLabel.text = "Closed"
         } else {
@@ -74,25 +74,25 @@ class BusinessViewController: UIViewController {
         }
     }
     
-    @IBAction func callButtonPressed(sender: UIButton) {
+    @IBAction func callButtonPressed(_ sender: UIButton) {
         if let phoneNumber = business?.phone {
-            UIApplication.sharedApplication().openURL(NSURL(string: String(format:"tel://%@", phoneNumber))!)
+            UIApplication.shared.openURL(URL(string: String(format:"tel://%@", phoneNumber))!)
         }
     }
     
-    @IBAction func mapsButtonPressed(sender: UIButton) {
+    @IBAction func mapsButtonPressed(_ sender: UIButton) {
         let lat:CLLocationDegrees = (business?.location?.latitude)!
         let lng:CLLocationDegrees = (business?.location?.longitude)!
         
         let coordinate = CLLocationCoordinate2DMake(lat,lng)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
         mapItem.name = business?.name
-        mapItem.openInMapsWithLaunchOptions([MKLaunchOptionsDirectionsModeDriving : MKLaunchOptionsDirectionsModeKey])
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeDriving : MKLaunchOptionsDirectionsModeKey])
     }
     
-    @IBAction func seeMorePressed(sender: UIButton) {
+    @IBAction func seeMorePressed(_ sender: UIButton) {
         if let url = business?.mobileUrl {
-            UIApplication.sharedApplication().openURL(NSURL(string:(url))!)
+            UIApplication.shared.openURL(URL(string:(url))!)
         }
     }
 }

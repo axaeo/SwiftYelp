@@ -1,4 +1,10 @@
 platform :ios, '9.0'
 use_frameworks!
 
-pod 'OAuthSwift', '~> 0.5.0'
+target "SwiftYelp" do
+    pod 'OAuthSwift', '~> 1.0.0'
+end
+
+target "SwiftYelpTests" do
+    pod 'OAuthSwift', '~> 1.0.0'
+end

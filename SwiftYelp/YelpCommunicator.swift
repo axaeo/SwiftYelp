@@ -17,12 +17,14 @@ class YelpCommunicator {
         client = OAuthSwiftClient(
             consumerKey: consumerKey,
             consumerSecret: consumerSecret,
-            accessToken: accessToken,
-            accessTokenSecret: accessTokenSecret
+            oauthToken: accessToken,
+            oauthTokenSecret: accessTokenSecret,
+            version: OAuthSwiftCredential.Version.oauth1
+            
         )
     }
     
-    func searchWithTerm(term: String, location: String, callback: (data: Array<Business>?, error: ErrorType?) -> Void) {
+    func searchWithTerm(_ term: String, location: String, callback: @escaping (_ data: Array<Business>?, _ error: Error?) -> Void) {
         client?.get(
             "https://api.yelp.com/v2/search",
             parameters: [
@@ -32,22 +34,22 @@ class YelpCommunicator {
             ],
             success: { (data, response) in
                 do {
-                    let resultJSON = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                    let resultJSON = try JSONSerialization.jsonObject(with: data, options: []) as! [String:AnyObject]
                     let businessJSONArray = resultJSON["businesses"]
-                    callback(data: Business.fromArray(businessJSONArray as! Array<Dictionary<String, AnyObject>> ), error: nil);
+                    callback(Business.fromArray(businessJSONArray as! Array<Dictionary<String, AnyObject>> ), nil);
                 } catch  {
                     print("error: %@", error);
-                    callback(data: nil, error: error);
+                    callback(nil, error);
                 }
             },
             failure: { (error) in
                 print("error: %@", error);
-                callback(data: nil, error: error);
+                callback(nil, error);
             }
         )
     }
     
-    func getAdditionalDataForBusiness(business: Business, callback: (error: ErrorType?) -> Void) {
+    func getAdditionalDataForBusiness(_ business: Business, callback: @escaping (_ error: Error?) -> Void) {
     
         let url = String(format:"https://api.yelp.com/v2/business/%@", business.serverId!)
         client?.get(
@@ -55,31 +57,33 @@ class YelpCommunicator {
             parameters: [:],
             success: { (data, response) in
                 do {
-                    let resultJSON = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                    let resultJSON = try JSONSerialization.jsonObject(with: data, options: [])
                     let result = Business.fromJson(resultJSON as! Dictionary<String, AnyObject>)
                     business.reviews = result.reviews
-                    callback(error: nil)
+                    callback(nil)
                 } catch  {
-                    callback(error: error);
+                    callback(error);
                 }
             },
             failure: { (error) in
-                callback(error: error);
+                callback(error);
             }
         )
     }
     
-    func downloadDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            completion(data: data, response: response, error: error)
-            }.resume()
+    func downloadDataFromUrl(_ url:URL, completion: @escaping ((_ data: Data?, _ response: URLResponse?, _ error: Error? ) -> Void)) {
+    /**    URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            completion(data, response, error)
+            }) .resume() **/
+        
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
-    func downloadImageFromURL(urlString: String, callback: ((image: UIImage?, error: NSError?) -> Void)){
-        self.downloadDataFromUrl(NSURL(string: urlString)!) { (data, response, error)  in
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else { return }
-                callback(image: UIImage(data: data), error: error)
+    func downloadImageFromURL(_ urlString: String, callback: @escaping ((_ image: UIImage?, _ error: Error?) -> Void)){
+        self.downloadDataFromUrl(URL(string: urlString)!) { (data, response, error)  in
+            DispatchQueue.main.async { () -> Void in
+                guard let data = data , error == nil else { return }
+                callback(UIImage(data: data), error)
             }
         }
     }

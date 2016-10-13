@@ -28,7 +28,7 @@ class Business {
     var location: Location?
     var reviews: Array<Review>?
     
-    class func fromArray(array: Array<Dictionary<String, AnyObject>>) -> Array<Business> {
+    class func fromArray(_ array: Array<Dictionary<String, AnyObject>>) -> Array<Business> {
         var result = Array<Business>()
         
         for json in array {
@@ -38,7 +38,7 @@ class Business {
         return result;
     }
     
-    class func fromJson(json: Dictionary<String, AnyObject>) -> Business {
+    class func fromJson(_ json: Dictionary<String, AnyObject>) -> Business {
         let result = Business()
         
         result.serverId = json["id"] as? String
@@ -65,7 +65,7 @@ class Business {
         return result;
     }
     
-    class func processCategoriesArray(array: Array<AnyObject>) -> Array<String> {
+    class func processCategoriesArray(_ array: Array<AnyObject>) -> Array<String> {
         var result = Array<String>()
         
         for item in array {

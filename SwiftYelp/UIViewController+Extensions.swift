@@ -10,23 +10,23 @@ import UIKit
 
 extension UIViewController {
 
-    func showErrorMessage(message:String, title:String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+    func showErrorMessage(_ message:String, title:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
-    func showActivityIndicator(completion: (spinner:UIActivityIndicatorView) -> Void) {
-        let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-        spinner.center = CGPointMake(self.view.bounds.size.width / 2, self.view.bounds.size.height / 2);
+    func showActivityIndicator(_ completion: @escaping (_ spinner:UIActivityIndicatorView) -> Void) {
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        spinner.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height / 2);
         spinner.hidesWhenStopped = true;
-        spinner.hidden = true;
-        self.view.bringSubviewToFront(spinner)
+        spinner.isHidden = true;
+        self.view.bringSubview(toFront: spinner)
         self.view.addSubview(spinner)
         spinner.startAnimating()
         
-        dispatch_async(dispatch_get_main_queue(),{
-            completion(spinner: spinner);
+        DispatchQueue.main.async(execute: {
+            completion(spinner);
         })
     }
 }

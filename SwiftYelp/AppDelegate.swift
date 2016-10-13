@@ -14,15 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var yelpCommunicator: YelpCommunicator?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
         //WARNING: - Incomplete implementation. Ensure values are placed in plist!
-        let path = NSBundle.mainBundle().pathForResource("YelpAPI", ofType: "plist")
+        let path = Bundle.main.path(forResource: "YelpAPI", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
-        let consumerKey = dict!.valueForKey("consumerKey") as? String
-        let consumerSecret = dict!.valueForKey("consumerSecret") as? String
-        let accessToken = dict!.valueForKey("accessToken") as? String
-        let accessTokenSecret = dict!.valueForKey("accessTokenSecret") as? String
+        let consumerKey = dict!.value(forKey: "consumerKey") as? String
+        let consumerSecret = dict!.value(forKey: "consumerSecret") as? String
+        let accessToken = dict!.value(forKey: "accessToken") as? String
+        let accessTokenSecret = dict!.value(forKey: "accessTokenSecret") as? String
         
         self.yelpCommunicator = YelpCommunicator(consumerKey: consumerKey!, consumerSecret: consumerSecret!, accessToken: accessToken!, accessTokenSecret: accessTokenSecret!);
         
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     class func instance() -> AppDelegate {
-        return UIApplication.sharedApplication().delegate as! AppDelegate
+        return UIApplication.shared.delegate as! AppDelegate
     }
     
 }
